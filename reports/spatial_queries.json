@@ -1,0 +1,38 @@
+{
+  "mode": "fixture",
+  "checked_at": "2026-10-28T23:09:55.769599+00:00",
+  "query_file": "examples/parcel_queries.sql",
+  "crs": "EPSG:25832",
+  "note": "Fictional parcels and hazards. Intersections include containment and boundary contact. No match does not establish safety.",
+  "intersection": [
+    {
+      "source_id": "fixture-sn-001",
+      "hazard_type": "underground_cavity",
+      "hazard_classification": "fixture_only_class_a",
+      "source_url": "https://geoportal.sachsen.de/wfs/altbergbau",
+      "source_layer": "sn_salka_hohlraeume",
+      "is_fixture": true,
+      "intersection_area_m2": 7823.8246911186625
+    },
+    {
+      "source_id": "fixture-sn-002",
+      "hazard_type": "shaft",
+      "hazard_classification": "fixture_only_class_b",
+      "source_url": "https://geoportal.sachsen.de/wfs/altbergbau",
+      "source_layer": "sn_salka_hohlraeume",
+      "is_fixture": true,
+      "intersection_area_m2": 0.0
+    }
+  ],
+  "proximity_25_metres": [
+    {
+      "source_id": "fixture-sn-001",
+      "hazard_type": "underground_cavity",
+      "hazard_classification": "fixture_only_class_a",
+      "source_url": "https://geoportal.sachsen.de/wfs/altbergbau",
+      "source_layer": "sn_salka_hohlraeume",
+      "is_fixture": true,
+      "distance_m": 14.052264746841944
+    }
+  ]
+}

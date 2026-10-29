@@ -1,50 +1,41 @@
-version: "3.9"
+name: iris-geo-sn
 
 services:
-
-  postgres:
-
-    image: postgis/postgis:17-3.5
-
-    container_name: nrw-postgis
-
-    restart: unless-stopped
-
+  harvester:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: iris-geo-sn-harvester:local
+    profiles: ["tools"]
+    user: "${IRIS_UID:-1000}:${IRIS_GID:-1000}"
     environment:
-      POSTGRES_DB: ${POSTGRES_DB}
-      POSTGRES_USER: ${POSTGRES_USER}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
-
-    ports:
-      - "5433:5432"
-
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
-
-    healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U postgres"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
-
-  pgadmin:
-
-    image: dpage/pgadmin4
-
-    container_name: nrw-pgadmin
-
-    restart: unless-stopped
-
-    environment:
-      PGADMIN_DEFAULT_EMAIL: admin@gmail.com
-      PGADMIN_DEFAULT_PASSWORD: admin123
-
-    ports:
-      - "5050:80"
-
+      IRIS_DATABASE_URL: postgresql+psycopg2://hitesh_soneji:${IRIS_DB_PASSWORD:?Set IRIS_DB_PASSWORD in .env.iris}@staging-db:5432/iris_geo_sn
+      IRIS_TEST_DATABASE_URL: postgresql+psycopg2://hitesh_soneji:${IRIS_DB_PASSWORD:?Set IRIS_DB_PASSWORD in .env.iris}@staging-db:5432/iris_geo_sn
     depends_on:
-      - postgres
+      staging-db:
+        condition: service_healthy
+    volumes:
+      - ./reports:/app/reports
+
+  staging-db:
+    image: postgis/postgis:17-3.5@sha256:01a6a70e41e6c4467c8f55f6063555ed72db2d6662cd0d571040d42eadaeb6f6
+    # This image provides amd64; Docker Desktop emulates it on Apple Silicon.
+    platform: linux/amd64
+    environment:
+      POSTGRES_DB: iris_geo_sn
+      POSTGRES_USER: hitesh_soneji
+      POSTGRES_PASSWORD: ${IRIS_DB_PASSWORD:?Set IRIS_DB_PASSWORD in .env.iris}
+    ports:
+      - "127.0.0.1:4000:5432"
+    volumes:
+      - staging_data:/var/lib/postgresql/data
+      - ./docker/iris/01-staging.sql:/docker-entrypoint-initdb.d/01-staging.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U hitesh_soneji -d iris_geo_sn"]
+      interval: 5s
+      timeout: 5s
+      retries: 12
+      start_period: 20s
 
 volumes:
-
-  postgres_data:
+  staging_data:

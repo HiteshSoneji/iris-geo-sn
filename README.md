@@ -1,3 +1,7 @@
+## IRIS-GEO-SN submission
+
+See [submission_README.md](submission_README.md) for the task implementation, Docker setup, tests and source-access limitation. The sections below describe the original sample application.
+
 # 🏢 NRW Data Center Business Intelligence Platform
 
 ### AI-Powered Geospatial Business Intelligence for Data Center Site Selection and Infrastructure Analysis

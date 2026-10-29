@@ -1,0 +1,139 @@
+{
+  "type": "FeatureCollection",
+  "fixture_metadata": {
+    "is_fixture": true,
+    "description": "Fictional Saxony hazard records for the IRIS-GEO-SN assignment. These are not official hazard locations or classifications.",
+    "input_crs": "EPSG:4326",
+    "schema_verified": false,
+    "source_note": "source_url and source_layer refer to the assignment's requested source, not the origin of these simulated records. Field names, statuses, classifications and dates are assumptions.",
+    "expected_results": {
+      "valid_polygon": "accept",
+      "valid_point": "accept",
+      "missing_metadata": "accept with unknown metadata",
+      "null_geometry": "reject: null geometry",
+      "invalid_polygon": "reject: self-intersecting polygon",
+      "missing_source_id": "reject: missing source ID"
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "fixture_case": "valid_polygon",
+        "is_fixture": true,
+        "source_id": "fixture-sn-001",
+        "state": "SN",
+        "hazard_type": "underground_cavity",
+        "status": "fixture_only_recorded",
+        "hazard_classification": "fixture_only_class_a",
+        "source_url": "https://geoportal.sachsen.de/wfs/altbergbau",
+        "source_layer": "sn_salka_hohlraeume",
+        "source_updated_at": "2026-10-01"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [[13.700, 51.000], [13.702, 51.000], [13.702, 51.002], [13.700, 51.002], [13.700, 51.000]]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "fixture_case": "valid_point",
+        "is_fixture": true,
+        "source_id": "fixture-sn-002",
+        "state": "SN",
+        "hazard_type": "shaft",
+        "status": "fixture_only_recorded",
+        "hazard_classification": "fixture_only_class_b",
+        "source_url": "https://geoportal.sachsen.de/wfs/altbergbau",
+        "source_layer": "sn_salka_hohlraeume",
+        "source_updated_at": "2026-10-01"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [13.701, 51.001]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "fixture_case": "missing_metadata",
+        "is_fixture": true,
+        "source_id": "fixture-sn-003",
+        "state": "SN",
+        "hazard_type": "legacy_mining_area",
+        "status": null,
+        "hazard_classification": null,
+        "source_url": "https://geoportal.sachsen.de/wfs/altbergbau",
+        "source_layer": "sn_salka_hohlraeume",
+        "source_updated_at": null
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [[13.710, 51.000], [13.712, 51.000], [13.712, 51.002], [13.710, 51.002], [13.710, 51.000]]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "fixture_case": "null_geometry",
+        "is_fixture": true,
+        "source_id": "fixture-sn-004",
+        "state": "SN",
+        "hazard_type": "underground_cavity",
+        "status": "fixture_only_recorded",
+        "hazard_classification": null,
+        "source_url": "https://geoportal.sachsen.de/wfs/altbergbau",
+        "source_layer": "sn_salka_hohlraeume",
+        "source_updated_at": null
+      },
+      "geometry": null
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "fixture_case": "invalid_polygon",
+        "is_fixture": true,
+        "source_id": "fixture-sn-005",
+        "state": "SN",
+        "hazard_type": "underground_cavity",
+        "status": "fixture_only_recorded",
+        "hazard_classification": null,
+        "source_url": "https://geoportal.sachsen.de/wfs/altbergbau",
+        "source_layer": "sn_salka_hohlraeume",
+        "source_updated_at": null
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [[13.720, 51.000], [13.722, 51.002], [13.720, 51.002], [13.722, 51.000], [13.720, 51.000]]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "fixture_case": "missing_source_id",
+        "is_fixture": true,
+        "source_id": null,
+        "state": "SN",
+        "hazard_type": "underground_cavity",
+        "status": "fixture_only_recorded",
+        "hazard_classification": null,
+        "source_url": "https://geoportal.sachsen.de/wfs/altbergbau",
+        "source_layer": "sn_salka_hohlraeume",
+        "source_updated_at": null
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [[13.730, 51.000], [13.732, 51.000], [13.732, 51.002], [13.730, 51.002], [13.730, 51.000]]
+        ]
+      }
+    }
+  ]
+}

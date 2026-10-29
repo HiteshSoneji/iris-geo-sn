@@ -1,0 +1,32 @@
+{
+  "checked_at": "2026-10-29T13:15:10.769527+00:00",
+  "status": "passed",
+  "final_review": true,
+  "image_id": "sha256:ea34371f9708b7ac4489ead3587c4d8fb49f8d6c873a63a3c303a0286e16a993",
+  "application_architecture": "arm64",
+  "runtime": {
+    "python": "3.11.18",
+    "uid": 501,
+    "credential_file_in_image": false,
+    "git_directory_in_image": false
+  },
+  "database_user": "hitesh_soneji",
+  "published_local_port": 4000,
+  "container_database_port": 5432,
+  "fresh_database_initialised": true,
+  "committed_rows_across_loads": [
+    0,
+    3,
+    3
+  ],
+  "ids_and_creation_timestamps_preserved": true,
+  "tests_passed": 43,
+  "tests_skipped": 0,
+  "spatial_sql_examples_executed": true,
+  "geometry_metadata": "GEOMETRY:25832",
+  "source_key_and_geometry_constraints_verified": true,
+  "iris_core_created": false,
+  "temporary_database_removed": true,
+  "original_database_rows_before": 3,
+  "original_database_rows_after": 3
+}

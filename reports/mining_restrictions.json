@@ -1,0 +1,51 @@
+{
+  "mode": "fixture",
+  "input_file": "tests/fixtures/mining_restrictions.geojson",
+  "started_at": "2026-10-29T13:15:04.198792+00:00",
+  "source_crs": "EPSG:4326",
+  "target_crs": "EPSG:25832",
+  "destination": "iris_staging.mining_restrictions",
+  "source_urls": [
+    "https://geoportal.sachsen.de/wfs/altbergbau"
+  ],
+  "source_layers": [
+    "sn_salka_hohlraeume"
+  ],
+  "access_note": "Live permissions, licence and schema are unverified. These records are simulated.",
+  "currency_note": "Fixture dates are fictional; they do not establish live data currency.",
+  "read": 6,
+  "accepted": 3,
+  "rejected_count": 3,
+  "rejected": [
+    {
+      "feature_index": 4,
+      "source_id": "fixture-sn-004",
+      "fixture_case": "null_geometry",
+      "source_url": "https://geoportal.sachsen.de/wfs/altbergbau",
+      "source_layer": "sn_salka_hohlraeume",
+      "reason": "Null geometry."
+    },
+    {
+      "feature_index": 5,
+      "source_id": "fixture-sn-005",
+      "fixture_case": "invalid_polygon",
+      "source_url": "https://geoportal.sachsen.de/wfs/altbergbau",
+      "source_layer": "sn_salka_hohlraeume",
+      "reason": "Invalid geometry: Self-intersection[13.721 51.001]."
+    },
+    {
+      "feature_index": 6,
+      "source_id": null,
+      "fixture_case": "missing_source_id",
+      "source_url": "https://geoportal.sachsen.de/wfs/altbergbau",
+      "source_layer": "sn_salka_hohlraeume",
+      "reason": "Missing or invalid source_id."
+    }
+  ],
+  "unknown_classification_ids": [
+    "fixture-sn-003"
+  ],
+  "upserted": 3,
+  "database_status": "committed",
+  "finished_at": "2026-10-29T13:15:04.299048+00:00"
+}

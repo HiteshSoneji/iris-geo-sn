@@ -1,0 +1,8 @@
+{
+  "recorded_at": "2026-10-29T14:13:17.077215+01:00",
+  "request_url": "https://geoportal.sachsen.de/wfs/altbergbau?service=WFS&request=GetCapabilities",
+  "http_status": 404,
+  "content_type": "text/html; charset=UTF-8",
+  "result": "No WFS capabilities XML returned. Live layer, schema and permissions remain unverified.",
+  "mode": "fixture fallback permitted by assignment"
+}
