@@ -26,11 +26,9 @@ docker compose --env-file .env.iris -f docker-compose.yml down
 
 ## Source and fixture
 
-On 28 October 2026, this capabilities request returned HTTP 404 and HTML:
-
 `https://geoportal.sachsen.de/wfs/altbergbau?service=WFS&request=GetCapabilities`
 
-Rechecked on 29 October 2026: still HTTP 404 with HTML. See `reports/source_access.json`.
+Checked on 28th and on 29 October 2026: still HTTP 404 with HTML. See `reports/source_access.json`.
 
 The requested layer is `sn_salka_hohlraeume`. Its actual schema, permissions, licence and data currency could not be verified. This uses the fixture fallback allowed in the assignment. No access restrictions were bypassed.
 
